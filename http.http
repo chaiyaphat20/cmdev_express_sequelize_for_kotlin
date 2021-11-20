@@ -1,7 +1,7 @@
 GET http://localhost:300/product
 
 ###
-GET http://localhost:300/product/15
+GET http://localhost:300/product/222
 ###
 
 POST http://localhost:300/product
@@ -13,7 +13,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:300/product/12
+PUT http://localhost:300/product/122
 Content-Type: application/json
 
 {
@@ -22,6 +22,6 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:300/product/12
+DELETE  http://localhost:300/product/2
 Content-Type: application/json
 

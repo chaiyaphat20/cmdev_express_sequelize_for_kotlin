@@ -4,11 +4,12 @@ $sequelize init
 2.generate file migrations (model)
 $ sequelize model:generate --name Products --attributes "name:string, image:string, stock:integer" --underscored true
 
-3.สร้าง table จาก ไฟล์ใน migrations
+**-----** เริ่ม ยัดค่าเข้า DB ตาม ENV
+1.สร้าง table จาก ไฟล์ใน migrations
 $ sequelize db:migrate
 
-4.genarate seed เพื่อเป็นคำสั่งลัดในการ seed data to Table ไม่ก็ ลบ data ออกจาก table ทั้งหมด
+2.genarate seed เพื่อเป็นคำสั่งลัดในการ seed data to Table ไม่ก็ ลบ data ออกจาก table ทั้งหมด
 $ sequelize seed:generate --name seed-product
 
-5.คำสั่ง ยัดข้อมูลเข้าฐานข้อมูล  all หมายถึงทุกไฟล์ seed
+3.คำสั่ง ยัดข้อมูลเข้าฐานข้อมูล  all หมายถึงทุกไฟล์ seed
 $ sequelize db:seed:all

@@ -1,11 +1,11 @@
 ### Get All Product
-GET http://localhost:300/product
+GET http://localhost:3000/product
 
 ###Get Product by id
-GET http://localhost:300/product/222
+GET http://localhost:3000/product/222
 
 ###Create Product
-POST http://localhost:300/product
+POST http://localhost:3000/product
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ###Update product
-PUT http://localhost:300/product/18
+PUT http://localhost:3000/product/18
 Content-Type: application/json
 
 {
@@ -25,6 +25,6 @@ Content-Type: application/json
 }
 
 ###Delete Product by id
-DELETE  http://localhost:300/product/2
+DELETE  http://localhost:3000/product/2
 Content-Type: application/json
 

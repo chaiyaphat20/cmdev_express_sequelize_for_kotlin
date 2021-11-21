@@ -1,27 +1,30 @@
+### Get All Product
 GET http://localhost:300/product
 
-###
+###Get Product by id
 GET http://localhost:300/product/222
-###
 
+###Create Product
 POST http://localhost:300/product
 Content-Type: application/json
 
 {
-	"name":"art",
-	"age":"12"
+	"name":"macbook pro",
+	"stock":1234,
+	"price":3300
 }
 
-###
-PUT http://localhost:300/product/122
+###Update product
+PUT http://localhost:300/product/18
 Content-Type: application/json
 
 {
-	"name":"art",
-	"age":"12"
+	"name":"macbook pro",
+	"stock":1234,
+	"price":600
 }
 
-###
+###Delete Product by id
 DELETE  http://localhost:300/product/2
 Content-Type: application/json
 

@@ -4,6 +4,7 @@ const db = require("./models");
 
 app.use(express.json());
 
+//Get Product All
 app.get("/product", async (req, res) => {
   try {
     const result = await db.Products.findAll({
@@ -15,6 +16,7 @@ app.get("/product", async (req, res) => {
   }
 });
 
+//Get Product By Id
 app.get("/product/:id", async (req, res) => {
   try {
     const result = await db.Products.findOne({
@@ -30,14 +32,38 @@ app.get("/product/:id", async (req, res) => {
   }
 });
 
+//Create Product
 app.post("/product", async (req, res) => {
-  res.status(200).json({ result: `[POST]  ${JSON.stringify(req.body)}` });
+  try {
+    const result = await db.Products.create(req.body);
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
+//Update Product By Id
 app.put("/product/:id", async (req, res) => {
-  res.status(200).json({
-    result: `[PUT] id: ${req.params.id} , ${JSON.stringify(req.body)}`,
-  });
+  try {
+    //find Product by ID
+    const result = await db.Products.findOne({
+      where: { id: req.params.id },
+    });
+    if (!result) {
+      return res.status(404).json({ msg: "Product No found" });
+    }
+    const response = await db.Products.update(req.body, {
+      where: { id: result.id },
+    });
+    if (response[0] > 0) {
+      const updateProduct = await db.Products.findByPk(result.id);
+      res.status(200).json(updateProduct);
+    } else {
+      throw new Error("Update Product Failure!!");
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
 app.delete("/product/:id", async (req, res) => {

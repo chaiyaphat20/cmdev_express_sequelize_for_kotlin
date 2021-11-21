@@ -4,9 +4,9 @@
     "storage":"./dev.sqlite3"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "art",
+    "password": "456789",
+    "database": "cmdev",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

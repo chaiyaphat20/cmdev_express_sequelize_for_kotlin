@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require('cors')
 const db = require("./models");
 
 app.use(express.json());
+app.use('/images', express.static('images'));
+app.use(cors())
 
 //Get Product All
 app.get("/product", async (req, res) => {

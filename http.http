@@ -1,5 +1,5 @@
 ### Get All Product
-GET http://localhost:3000/product
+GET http://172.28.192.1:3000/product
 
 ###Get Product by id
 GET http://localhost:3000/product/222
@@ -15,16 +15,20 @@ Content-Type: application/json
 }
 
 ###Update product
-PUT http://localhost:3000/product/18
+PUT http://localhost:3000/product/3
 Content-Type: application/json
 
 {
 	"name":"macbook pro",
 	"stock":1234,
-	"price":600
+	"price":600,
+	"image":null
 }
 
 ###Delete Product by id
 DELETE  http://localhost:3000/product/2
 Content-Type: application/json
 
+
+###Image
+GET  http://localhost:3000/images/product_22.jpg
